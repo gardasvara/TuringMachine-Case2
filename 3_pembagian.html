@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turing Machine Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="1_penjumlahan.html">Step 1 - Penjumlahan</a></li>
+            <li><a href="2_perpangkatan.html">Step 2 - Perpangkatan</a></li>
+            <li><a href="3_pembagian.html">Step 3 - Pembagian</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="judul">
+            <h1>Turing Machine - Case 2</h1>
+        </div>
+        <div class="image-container">
+            <img src="soalcase2.png" alt="Soal Case 2" class="soalcase2">
+        </div>
+        <div class="description">
+            <h3>Input: (m+n)<sup>a</sup>/b</h3><br>
+        </div>
+        <div class="note">
+            <h3>Note: kedua input harus dalam bilangan bulat positif (>=0)</h3>
+        </div>
+        <div class="input-section">
+            <input type="number" name="pow" id="pow" autocomplete="off" placeholder="(m+n)^a">
+            /
+            <input type="number" name="var_b" id="var_b" autocomplete="off" placeholder="b">
+            
+            <br><br>
+
+            <button id="equal" class="btn" onclick="execute_pembagian()">Submit Pembagian</button>
+        </div>
+
+        <!-- Tape untuk Pembagian -->
+        <div class="judul"><h2>Pembagian - (pow)/b</h2></div>
+        <div class="tmTape-wrapper" id="tmTape"></div>
+        <div id="controls_Pembagian" class="form-wrapper">
+            <button class="controller" disabled onmousedown="executePlay('Pembagian')">Play</button>
+            <button class="controller" disabled onmousedown="executePause('Pembagian')">Pause</button>
+            <button class="controller" disabled onmousedown="executeNextMove('Pembagian')">Next Move</button>
+            <button class="controller" disabled onmousedown="executeClear('Pembagian')">Clear</button>
+        </div>
+
+        <!-- Hasil Pembagian -->
+        <h3>Hasil Pembagian : <span id="ans">0</span></h3>
+        
+        <script src="pembagian.js"></script>
+
+        <div class="spdbtn">
+            <h3>Pilih Kecepatan</h3>
+            <div class="" id="speed-btn">
+                <label for="025" class="spdlabel">
+                    <input type="radio" name="playSpeed" id="025" disabled />
+                    <span>0.25x</span>
+                </label>
+                
+                <label for="050" class="spdlabel">
+                    <input type="radio" name="playSpeed" id="050" disabled>
+                    <span>0.5x</span>
+                </label>
+                <label for="100" class="spdlabel">
+                    <input type="radio" name="playSpeed" id="100" disabled checked>
+                    <span>1.0x</span>
+                </label>
+                <label for="150" class="spdlabel">
+                    <input type="radio" name="playSpeed" id="150" disabled />
+                    <span>1.5x</span>
+                </label>
+                <label for="200" class="spdlabel">
+                    <input type="radio" name="playSpeed" id="200" disabled>
+                    <span>2.0x</span>
+                </label>
+                <label for="500" class="spdlabel">
+                    <input type="radio" name="playSpeed" id="500" disabled>
+                    <span>5.0x</span>
+                </label>
+            </div> <br>
+        </div>
+    </div>
+
+    <script src="maketape.js"></script>
+    <script src="makefunction.js"></script>
+</body>
+</html>
+        
